@@ -1,0 +1,71 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: user
+  description: user module for alpinist-ecommerce-core
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: shukumar3@publicisgroupe
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://petstore.swagger.io/v1
+paths:
+  /api/v1/user/user:
+    post:
+      summary: Generate the user service to add user
+      operationId: user
+      tags:
+        - Add User
+      requestBody:
+        description: user data 
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        200:
+          description: Expected response to a valid request
+        default:
+          description: Unexpected error in sending email
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    User:
+      type: object
+      properties:
+        userId:
+          type: integer
+        userName:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        
+    

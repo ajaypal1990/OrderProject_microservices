@@ -1,0 +1,2 @@
+20:20:26.942 [restartedMain] INFO  c.v.t.I.InventoryApplication- The following profiles are active: dev 
+20:20:47.541 [restartedMain] INFO  c.v.t.I.InventoryApplication- Started InventoryApplication in 25.867 seconds (JVM running for 26.921) 
